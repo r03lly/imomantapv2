@@ -1,5 +1,9 @@
 # Roadmap
 
+## Pendaftaran pasien baru
+- [ ] Pulihkan penghubung pendaftaran otomatis dan data pasien yang terlewat tanpa mengubah password
+- [ ] Uji pasien baru muncul di daftar admin dan tenaga medis
+
 ## Setup remix saat ini
 - [x] Perbarui lima secret melalui formulir aman
 - [x] Verifikasi migrasi remix kosong tanpa mengubah jurnal yang dikelola otomatis
