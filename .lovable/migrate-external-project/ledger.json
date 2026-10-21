@@ -1,0 +1,14 @@
+{
+  "source": "github:rullyrull/imomantapv2",
+  "capabilities": [
+    { "capability": "application code", "source": "github repo", "outcome": "copied into project", "status": "verified", "next_action": null },
+    { "capability": "schema", "source": "types.ts + drizzle", "outcome": "recreated in Lovable Cloud (3 migrations)", "status": "verified", "next_action": null },
+    { "capability": "database functions", "source": "app RPC calls", "outcome": "has_role, is_staff, current_user_role, verify_cron_token, get_adherence_summary, get_adherence_daily", "status": "verified", "next_action": null },
+    { "capability": "records", "source": "none supplied", "outcome": "not imported", "status": "pending", "next_action": "user exports CSV/JSON per table" },
+    { "capability": "auth identities", "source": "none supplied", "outcome": "email/password auth enabled; admin + apoteker accounts provisioned", "status": "pending", "next_action": "user exports existing users for import" },
+    { "capability": "authorization", "source": "RLS policies", "outcome": "own-or-staff + role-based policies recreated", "status": "verified", "next_action": null },
+    { "capability": "push notifications", "source": "web-push", "outcome": "new VAPID keypair generated and stored", "status": "implemented", "next_action": "verify on a real device" },
+    { "capability": "cron endpoints", "source": "/api/public/hooks", "outcome": "preserved; CRON_SECRET stored", "status": "implemented", "next_action": "schedule jobs if needed" },
+    { "capability": "cutover", "source": "-", "outcome": "app runs on Lovable Cloud", "status": "pending", "next_action": "publish" }
+  ]
+}
