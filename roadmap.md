@@ -1,5 +1,12 @@
 # Roadmap
 
+## Setup remix saat ini
+- [x] Perbarui lima secret melalui formulir aman
+- [x] Verifikasi migrasi remix kosong tanpa mengubah jurnal yang dikelola otomatis
+- [x] Hubungkan Google Drive ke project remix
+- [ ] Verifikasi akses Google Drive
+- [ ] Terapkan akun admin dan tenaga medis yang diminta, lalu verifikasi login dan perannya
+
 ## Setup remix 21 Oktober 2026
 - [x] Perbarui lima secret yang diminta melalui formulir aman
 - [x] Verifikasi set migrasi kosong untuk database remix (sudah kosong saat diperiksa; tidak ada migrasi salinan tersisa)
