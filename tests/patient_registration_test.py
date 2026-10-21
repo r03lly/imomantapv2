@@ -13,6 +13,10 @@ def query(sql):
 
 
 class PatientRegistrationTest(unittest.TestCase):
+    def test_new_fendy_registration_is_visible_and_pending(self):
+        rows = query("SELECT p.full_name, p.phone_number, p.is_verified, r.role FROM public.profiles p JOIN public.user_roles r ON r.user_id=p.user_id WHERE p.user_id='9f85438c-b72b-4ebe-8cb6-73c8a4a680b0'")
+        self.assertEqual(rows, [{"full_name": "Fendy", "phone_number": "62895635178811", "is_verified": False, "role": "pasien"}])
+
     def test_signup_provisions_patient_records(self):
         rows = query("SELECT pg_get_triggerdef(oid) AS definition, tgenabled FROM pg_trigger WHERE tgrelid='auth.users'::regclass AND tgname='on_auth_user_created' AND NOT tgisinternal")
         self.assertEqual(len(rows), 1)
