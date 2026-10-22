@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/_authenticated/admin/audit")({
+  head: () => ({ meta: [{"title": "Audit Aktivitas — IMO MANTAP"}, {"name": "description", "content": "Riwayat aktivitas pengelolaan IMO MANTAP."}, {"property": "og:title", "content": "Audit Aktivitas — IMO MANTAP"}, {"property": "og:description", "content": "Riwayat aktivitas pengelolaan IMO MANTAP."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary"}] }),
   component: AuditLog,
 });
 

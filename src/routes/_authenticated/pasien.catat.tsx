@@ -16,6 +16,7 @@ import {
 import { hipertensiStatus, gulaDarahStatus, kolesterolStatus } from "@/lib/health-utils";
 
 export const Route = createFileRoute("/_authenticated/pasien/catat")({
+  head: () => ({ meta: [{"title": "Catat Kesehatan — IMO MANTAP"}, {"name": "description", "content": "Pencatatan pengukuran kesehatan pasien IMO MANTAP."}, {"property": "og:title", "content": "Catat Kesehatan — IMO MANTAP"}, {"property": "og:description", "content": "Pencatatan pengukuran kesehatan pasien IMO MANTAP."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary"}] }),
   component: CatatPage,
 });
 

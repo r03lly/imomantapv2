@@ -1,5 +1,9 @@
 # Roadmap
 
+## Perbaikan PWABuilder
+- [x] Konversi ikon asli menjadi PNG 512×512 dan 192×192, serta ganti nama aplikasi menjadi IMO MANTAP
+- [x] Periksa manifest dan ikon yang disajikan aplikasi (HTTP 200; format dan ukuran PNG teruji)
+
 ## Perbaikan deploy Vercel Hobby
 - [x] Hapus jadwal Cron Vercel yang menolak deploy paket gratis
 - [x] Siapkan pengganti jadwal otomatis di Lovable Cloud dan verifikasi konfigurasi (3 jadwal aktif; uji konfigurasi lulus)

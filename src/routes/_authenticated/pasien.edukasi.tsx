@@ -8,6 +8,7 @@ import kolesterolImage from "@/assets/edukasi-kolesterol.jpg";
 import umumImage from "@/assets/edukasi-umum.jpg";
 
 export const Route = createFileRoute("/_authenticated/pasien/edukasi")({
+  head: () => ({ meta: [{"title": "Edukasi Pasien — IMO MANTAP"}, {"name": "description", "content": "Materi edukasi kesehatan untuk pasien IMO MANTAP."}, {"property": "og:title", "content": "Edukasi Pasien — IMO MANTAP"}, {"property": "og:description", "content": "Materi edukasi kesehatan untuk pasien IMO MANTAP."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary"}] }),
   component: Edukasi,
 });
 

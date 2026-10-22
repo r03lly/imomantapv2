@@ -14,7 +14,7 @@ import {
 } from "@/hooks/use-branding";
 
 export const Route = createFileRoute("/_authenticated/admin/pengaturan")({
-  head: () => ({ meta: [{ title: "Pengaturan Aplikasi — Admin" }] }),
+  head: () => ({ meta: [{"title": "Pengaturan Admin — IMO MANTAP"}, {"name": "description", "content": "Pengaturan identitas aplikasi IMO MANTAP."}, {"property": "og:title", "content": "Pengaturan Admin — IMO MANTAP"}, {"property": "og:description", "content": "Pengaturan identitas aplikasi IMO MANTAP."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary"}] }),
   component: Pengaturan,
 });
 

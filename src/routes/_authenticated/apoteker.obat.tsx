@@ -23,6 +23,7 @@ import {
 } from "@/components/ui/select";
 
 export const Route = createFileRoute("/_authenticated/apoteker/obat")({
+  head: () => ({ meta: [{"title": "Katalog Obat — IMO MANTAP"}, {"name": "description", "content": "Pengelolaan katalog obat IMO MANTAP."}, {"property": "og:title", "content": "Katalog Obat — IMO MANTAP"}, {"property": "og:description", "content": "Pengelolaan katalog obat IMO MANTAP."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary"}] }),
   component: ObatKatalogPage,
 });
 

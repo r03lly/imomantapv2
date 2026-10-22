@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/select";
 
 export const Route = createFileRoute("/_authenticated/pasien/profil")({
+  head: () => ({ meta: [{"title": "Profil Pasien — IMO MANTAP"}, {"name": "description", "content": "Pengelolaan profil pasien IMO MANTAP."}, {"property": "og:title", "content": "Profil Pasien — IMO MANTAP"}, {"property": "og:description", "content": "Pengelolaan profil pasien IMO MANTAP."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary"}] }),
   component: ProfilPage,
 });
 

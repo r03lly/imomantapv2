@@ -17,6 +17,7 @@ import { toast } from "sonner";
 import { answerQuestion, GREETING, QUICK_PROMPTS } from "@/lib/chatbot-kb";
 
 export const Route = createFileRoute("/_authenticated/pasien/konsultasi")({
+  head: () => ({ meta: [{"title": "Konsultasi Pasien — IMO MANTAP"}, {"name": "description", "content": "Konsultasi kesehatan pasien di IMO MANTAP."}, {"property": "og:title", "content": "Konsultasi Pasien — IMO MANTAP"}, {"property": "og:description", "content": "Konsultasi kesehatan pasien di IMO MANTAP."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary"}] }),
   component: PasienKonsultasi,
 });
 

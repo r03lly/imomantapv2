@@ -21,6 +21,7 @@ import {
 } from "@/lib/health-utils";
 
 export const Route = createFileRoute("/_authenticated/pasien/")({
+  head: () => ({ meta: [{"title": "Dashboard Pasien — IMO MANTAP"}, {"name": "description", "content": "Ringkasan kesehatan dan kepatuhan pasien IMO MANTAP."}, {"property": "og:title", "content": "Dashboard Pasien — IMO MANTAP"}, {"property": "og:description", "content": "Ringkasan kesehatan dan kepatuhan pasien IMO MANTAP."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary"}] }),
   component: PasienDashboard,
 });
 
