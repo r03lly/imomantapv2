@@ -195,7 +195,28 @@ function ObatPage() {
   async function enablePush() {
     if (typeof window === "undefined") return;
     if (!("serviceWorker" in navigator) || !("PushManager" in window)) {
-      return toast.error("Browser tidak mendukung Web Push. Coba Chrome/Edge/Firefox terbaru.");
+      // Fallback: alarm saat aplikasi terbuka tetap berjalan.
+      if ("Notification" in window) {
+        try {
+          const p = await Notification.requestPermission();
+          setNotifPerm(p);
+        } catch {
+          /* ignore */
+        }
+      }
+      const ua = navigator.userAgent;
+      const inApp = /FBAN|FBAV|Instagram|Line\/|WhatsApp|; wv\)|MiuiBrowser|HeyTap|Telegram/i.test(ua);
+      const isIOS = /iPhone|iPad|iPod/i.test(ua);
+      const standalone = window.matchMedia?.("(display-mode: standalone)").matches;
+      const hint = inApp
+        ? "Buka tautan ini di Google Chrome (menu ⋮ → Buka di Chrome) agar pengingat bisa muncul saat aplikasi ditutup."
+        : isIOS && !standalone
+          ? "Di iPhone: ketuk Bagikan → Tambahkan ke Layar Utama, lalu buka dari ikon tersebut."
+          : !window.isSecureContext
+            ? "Buka aplikasi lewat alamat https:// agar pengingat latar belakang aktif."
+            : "Gunakan Google Chrome terbaru agar pengingat latar belakang aktif.";
+      toast.info("Alarm tetap berbunyi selama halaman ini terbuka.", { description: hint, duration: 10000 });
+      return;
     }
     setPushBusy(true);
     try {
