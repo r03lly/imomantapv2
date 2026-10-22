@@ -2,10 +2,5 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "vite build",
   "installCommand": "bun install",
-  "framework": null,
-  "crons": [
-    { "path": "/api/public/hooks/medication-reminders", "schedule": "* * * * *" },
-    { "path": "/api/public/hooks/mark-missed", "schedule": "*/30 * * * *" },
-    { "path": "/api/public/hooks/backup-drive", "schedule": "0 17 * * *" }
-  ]
+  "framework": null
 }

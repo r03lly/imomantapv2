@@ -17,6 +17,7 @@
 - The patient list route renders an Outlet for nested patient detail URLs so the detail page is not hidden by its parent list.
 
 ## Push notifications
+- Keep recurring HTTP jobs in Lovable Cloud managed schedules, not `vercel.json`, so Vercel Hobby deployments do not reject sub-daily cron expressions; callbacks require an available Lovable deployment.
 - Load the VAPID public key from the authenticated configuration function and validate its base64url P-256 point before subscribing; never embed a fallback key or credential in browser code.
 - Server push code resolves VAPID keys through `getVapidKeys` in `src/lib/vapid-keys.server.ts`: valid env secrets win, otherwise a pair is generated once and kept in the service-role-only `push_vapid_keys` table, so reminders keep working when copied secrets are placeholders.
 - The reminder cron matches schedule times against each push subscription's stored IANA `time_zone` (sent by the device), never a hardcoded offset, because patients live in WIB/WITA/WIT.
