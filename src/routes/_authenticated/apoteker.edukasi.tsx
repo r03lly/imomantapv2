@@ -20,6 +20,7 @@ import kolesterolImage from "@/assets/edukasi-kolesterol.jpg";
 import umumImage from "@/assets/edukasi-umum.jpg";
 
 export const Route = createFileRoute("/_authenticated/apoteker/edukasi")({
+  head: () => ({ meta: [{"title": "Edukasi Tenaga Medis — IMO MANTAP"}, {"name": "description", "content": "Pengelolaan materi edukasi kesehatan IMO MANTAP."}, {"property": "og:title", "content": "Edukasi Tenaga Medis — IMO MANTAP"}, {"property": "og:description", "content": "Pengelolaan materi edukasi kesehatan IMO MANTAP."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary"}] }),
   component: EdukasiAdmin,
 });
 

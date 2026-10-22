@@ -16,6 +16,7 @@ import { useServerFn } from "@tanstack/react-start";
 import { resetUserPassword, getUserEmails, setUserActive, deleteUser } from "@/lib/admin-users.functions";
 
 export const Route = createFileRoute("/_authenticated/admin/users")({
+  head: () => ({ meta: [{"title": "Manajemen Pengguna — IMO MANTAP"}, {"name": "description", "content": "Pengelolaan akun pengguna IMO MANTAP."}, {"property": "og:title", "content": "Manajemen Pengguna — IMO MANTAP"}, {"property": "og:description", "content": "Pengelolaan akun pengguna IMO MANTAP."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary"}] }),
   component: UsersAdmin,
 });
 

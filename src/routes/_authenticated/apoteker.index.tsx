@@ -19,6 +19,7 @@ import {
 } from "recharts";
 
 export const Route = createFileRoute("/_authenticated/apoteker/")({
+  head: () => ({ meta: [{"title": "Dashboard Tenaga Medis — IMO MANTAP"}, {"name": "description", "content": "Ringkasan pemantauan pasien IMO MANTAP."}, {"property": "og:title", "content": "Dashboard Tenaga Medis — IMO MANTAP"}, {"property": "og:description", "content": "Ringkasan pemantauan pasien IMO MANTAP."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary"}] }),
   component: Dashboard,
 });
 

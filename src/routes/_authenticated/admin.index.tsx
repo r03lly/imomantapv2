@@ -4,6 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Users, Activity, AlertTriangle, Pill, BookOpen, Download } from "lucide-react";
 
 export const Route = createFileRoute("/_authenticated/admin/")({
+  head: () => ({ meta: [{"title": "Dashboard Admin — IMO MANTAP"}, {"name": "description", "content": "Ringkasan administrasi IMO MANTAP."}, {"property": "og:title", "content": "Dashboard Admin — IMO MANTAP"}, {"property": "og:description", "content": "Ringkasan administrasi IMO MANTAP."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary"}] }),
   component: AdminDashboard,
 });
 

@@ -7,6 +7,7 @@ import { Send } from "lucide-react";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/_authenticated/apoteker/konsultasi")({
+  head: () => ({ meta: [{"title": "Konsultasi Tenaga Medis — IMO MANTAP"}, {"name": "description", "content": "Konsultasi pasien dengan tenaga medis di IMO MANTAP."}, {"property": "og:title", "content": "Konsultasi Tenaga Medis — IMO MANTAP"}, {"property": "og:description", "content": "Konsultasi pasien dengan tenaga medis di IMO MANTAP."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary"}] }),
   component: KonsultasiApoteker,
 });
 

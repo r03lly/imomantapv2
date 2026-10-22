@@ -28,6 +28,7 @@ import jsPDF from "jspdf";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/_authenticated/pasien/riwayat")({
+  head: () => ({ meta: [{"title": "Riwayat Kesehatan — IMO MANTAP"}, {"name": "description", "content": "Riwayat pengukuran kesehatan pasien IMO MANTAP."}, {"property": "og:title", "content": "Riwayat Kesehatan — IMO MANTAP"}, {"property": "og:description", "content": "Riwayat pengukuran kesehatan pasien IMO MANTAP."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary"}] }),
   component: RiwayatPage,
 });
 
