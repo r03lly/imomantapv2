@@ -215,6 +215,21 @@ function ObatPage() {
           : !window.isSecureContext
             ? "Buka aplikasi lewat alamat https:// agar pengingat latar belakang aktif."
             : "Gunakan Google Chrome terbaru agar pengingat latar belakang aktif.";
+      const isAndroid = /Android/i.test(ua);
+      const openInChrome = () => {
+        const { host, pathname, search } = window.location;
+        window.location.href = `intent://${host}${pathname}${search}#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=${encodeURIComponent(window.location.href)};end`;
+      };
+      if (inApp && isAndroid) {
+        // Langsung pindah ke Chrome agar pengingat latar belakang bisa diaktifkan.
+        toast.info("Membuka di Google Chrome…", {
+          description: "Setelah terbuka, tekan lonceng lagi untuk mengaktifkan pengingat.",
+          duration: 10000,
+          action: { label: "Buka Chrome", onClick: openInChrome },
+        });
+        setTimeout(openInChrome, 600);
+        return;
+      }
       toast.info("Alarm tetap berbunyi selama halaman ini terbuka.", { description: hint, duration: 10000 });
       return;
     }
