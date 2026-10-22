@@ -2,7 +2,8 @@
 
 ## Perbaikan deploy Vercel Hobby
 - [x] Hapus jadwal Cron Vercel yang menolak deploy paket gratis
-- [ ] Siapkan pengganti jadwal otomatis di Lovable Cloud dan verifikasi konfigurasi
+- [x] Siapkan pengganti jadwal otomatis di Lovable Cloud dan verifikasi konfigurasi (3 jadwal aktif; uji konfigurasi lulus)
+- [ ] Verifikasi pengingat dan backup otomatis setelah aplikasi diterbitkan di Lovable (menunggu publikasi oleh pengguna)
 
 ## Pendaftaran pasien baru
 - [x] Pulihkan penghubung pendaftaran otomatis dan data pasien yang terlewat tanpa mengubah password
