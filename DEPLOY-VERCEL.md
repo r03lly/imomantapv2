@@ -46,8 +46,13 @@ tenaga medis** — tetap berfungsi penuh karena:
 
 ## Catatan
 
-- Cron Vercel (bila ingin pengingat otomatis berjalan dari Vercel) dapat
-  diatur di `vercel.json` bagian `crons` memanggil
-  `/api/public/hooks/medication-reminders` dengan header `x-cron-secret`.
+- `vercel.json` tidak memakai Cron Vercel agar kompatibel dengan paket Hobby
+  (gratis), yang menolak jadwal setiap menit dan setiap 30 menit.
+- Pengingat obat setiap menit, pencatatan dosis terlewat setiap 30 menit,
+  dan backup Drive harian dijadwalkan melalui Lovable Cloud, bukan Vercel.
+  Jadwal tersebut memanggil aplikasi yang dihosting Lovable; deploy ke Vercel
+  saja tidak menerbitkan aplikasi di Lovable. Terbitkan juga aplikasi di
+  Lovable agar jadwal memiliki tujuan produksi yang tersedia.
+  Jangan menambahkan jadwal duplikat di Vercel karena bisa mengirim pengingat dua kali.
 - Preview Lovable tetap berjalan seperti biasa; konfigurasi ini hanya
   dipakai saat build di Vercel.

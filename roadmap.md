@@ -1,5 +1,9 @@
 # Roadmap
 
+## Perbaikan deploy Vercel Hobby
+- [x] Hapus jadwal Cron Vercel yang menolak deploy paket gratis
+- [ ] Siapkan pengganti jadwal otomatis di Lovable Cloud dan verifikasi konfigurasi
+
 ## Pendaftaran pasien baru
 - [x] Pulihkan penghubung pendaftaran otomatis dan data pasien yang terlewat tanpa mengubah password
 - [x] Uji pasien baru muncul di daftar admin dan tenaga medis
