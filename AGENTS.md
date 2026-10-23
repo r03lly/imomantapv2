@@ -11,6 +11,9 @@
 
 <!-- LOVABLE:END -->
 
+## Android packaging
+- Keep the Capacitor Android shell pointed at the deployed HTTPS site; deliver a standalone Android Studio source archive with Gradle-managed native source downloads so opening it does not require Node.js or bundled dependencies.
+
 ## Patient registration
 - Provision patient profiles and patient roles atomically through the auth signup trigger calling `public.handle_new_user`; never trust signup metadata for privileged roles, so registrations remain visible for staff approval without granting staff access.
 - Staff approval and patient password resets use authenticated server functions with staff and patient-only target checks; approval confirms only synthetic phone-email accounts because they cannot receive confirmation emails.

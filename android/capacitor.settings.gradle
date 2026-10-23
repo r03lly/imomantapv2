@@ -1,0 +1,2 @@
+// Capacitor sync may regenerate this file. Restore this line for standalone delivery.
+apply from: 'native-dependencies.gradle'

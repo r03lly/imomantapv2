@@ -2,7 +2,7 @@ import type { CapacitorConfig } from "@capacitor/cli";
 
 // The app is server-rendered, so the native shell loads the deployed site.
 // Set APP_URL to your Vercel address before running `npx cap sync android`.
-const APP_URL = process.env.APP_URL || "https://GANTI-DENGAN-LINK-VERCEL.vercel.app";
+const APP_URL = process.env.APP_URL || "https://imomantap.vercel.app";
 
 const config: CapacitorConfig = {
   appId: "com.imomantap.app",
