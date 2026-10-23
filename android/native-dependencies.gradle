@@ -1,0 +1,39 @@
+// Resolve pinned native sources during Android Studio sync, without Node.js.
+def modules = [
+    ['capacitor-android', 'android', '8.5.3', 'capacitor', 'ba1caece24913d17a69ba0b67f553c3c7da01214c69eb418ee56ff884820aa5a'],
+    ['capacitor-local-notifications', 'local-notifications', '8.3.1', 'android', 'f5772636102fdcbdba564a9bcb32db5d799bb6e27fdeaebc39b2abffe727c287'],
+    ['capacitor-splash-screen', 'splash-screen', '8.0.2', 'android', 'b7033b40c701dc8b4ae4459c5983f6eacc9b27fdbffa47f2d226e4916c21d097'],
+    ['capacitor-status-bar', 'status-bar', '8.0.4', 'android', 'fd40588ca823f541392b386364c81f292cdf42c2799ba6406f1c35cbe622813c']
+]
+modules.each { module ->
+    def (name, pkg, version, subdir, expectedHash) = module
+    def destination = new File(settingsDir, ".gradle/native-sources/${pkg}-${version}")
+    def projectFolder = new File(destination, "package/${subdir}")
+    def marker = new File(destination, '.verified')
+    if (!marker.exists() || !new File(projectFolder, 'build.gradle').exists()) {
+        destination.mkdirs()
+        def archive = new File(destination, 'source.tgz')
+        def connection = new URI("https://registry.npmjs.org/@capacitor/${pkg}/-/${pkg}-${version}.tgz").toURL().openConnection()
+        connection.connectTimeout = 30000
+        connection.readTimeout = 120000
+        println "Downloading Capacitor native module: ${pkg} ${version}"
+        connection.inputStream.withCloseable { input ->
+            archive.withOutputStream { output -> output << input }
+        }
+        def digest = java.security.MessageDigest.getInstance('SHA-256')
+        archive.withInputStream { input ->
+            byte[] buffer = new byte[8192]
+            int count
+            while ((count = input.read(buffer)) > 0) digest.update(buffer, 0, count)
+        }
+        if (digest.digest().encodeHex().toString() != expectedHash) {
+            archive.delete()
+            throw new GradleException("Native module checksum failed: ${pkg}")
+        }
+        new groovy.ant.AntBuilder().untar(src: archive, dest: destination, compression: 'gzip')
+        archive.delete()
+        marker.text = expectedHash
+    }
+    include ":${name}"
+    project(":${name}").projectDir = projectFolder
+}
