@@ -1,8 +1,8 @@
 # Roadmap
 
 ## Folder Android siap dibuka
-- [ ] Siapkan alamat Vercel dan folder Android tanpa kebutuhan Node.js di komputer pengguna
-- [ ] Periksa paket unduhan Android Studio dan sertakan panduan singkat
+- [x] Siapkan alamat Vercel dan folder Android tanpa kebutuhan Node.js di komputer pengguna
+- [x] Periksa paket unduhan Android Studio dan sertakan panduan singkat (uji konfigurasi lulus; pembuatan APK memerlukan Android Studio/SDK di komputer pengguna)
 
 ## Perbaikan PWABuilder
 - [x] Konversi ikon asli menjadi PNG 512×512 dan 192×192, serta ganti nama aplikasi menjadi IMO MANTAP

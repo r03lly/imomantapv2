@@ -11,7 +11,6 @@
 
 <!-- LOVABLE:END -->
 
-## Patient registration
 ## Android packaging
 - Keep the Capacitor Android shell pointed at the deployed HTTPS site; deliver a standalone Android Studio source archive with Gradle-managed native source downloads so opening it does not require Node.js or bundled dependencies.
 
