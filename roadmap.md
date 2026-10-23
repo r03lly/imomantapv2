@@ -1,5 +1,9 @@
 # Roadmap
 
+## Folder Android siap dibuka
+- [ ] Siapkan alamat Vercel dan folder Android tanpa kebutuhan Node.js di komputer pengguna
+- [ ] Periksa paket unduhan Android Studio dan sertakan panduan singkat
+
 ## Perbaikan PWABuilder
 - [x] Konversi ikon asli menjadi PNG 512×512 dan 192×192, serta ganti nama aplikasi menjadi IMO MANTAP
 - [x] Periksa manifest dan ikon yang disajikan aplikasi (HTTP 200; format dan ukuran PNG teruji)
